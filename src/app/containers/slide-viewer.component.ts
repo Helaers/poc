@@ -9,15 +9,14 @@ import { SlidesService } from '../services/slides.service';
     selector: 'slide-viewer',
     template: `
         <p>Slide viewer: {{message}}</p>
-
-        <hr>
             <button (click)="prevSlide(currentSlide)">Prev</button>
             <button (click)="nextSlide(currentSlide)">Next</button>
             <br>
+        <hr>
             <router-outlet></router-outlet>
         <hr>
 
-        <a [routerLink]="['/home']">Home</a>
+        <button [routerLink]="['/home']">Home</button>
     `,
     directives: [ROUTER_DIRECTIVES, SlideComponent],
     providers: [SlidesService]
@@ -25,18 +24,18 @@ import { SlidesService } from '../services/slides.service';
 
 export class SlideViewerComponent {
 
-    private currentSlide:number = 3;
+    private currentSlide:number = 3; // deze id zou ik van de slide.component moeten halen -- hoe?
 
     constructor(
         private slidesService: SlidesService,
         private route: ActivatedRoute,
         private router: Router) { }
 
-    message = 'Slides titles';
+    message = 'SLIDER-VIEWER';
 
 
-    ngAfterContentInit() {
-        console.log('current slid in afterview inti', this.slidesService.currentSlide);
+    ngAfterViewChecked() {
+        console.log('current slide in ngAfterView ', this.slidesService.currentSlide);
     }
 
     nextSlide(currentSlide:number) {

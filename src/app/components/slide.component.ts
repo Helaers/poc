@@ -27,7 +27,7 @@ export class SlideComponent {
             let id = +params['id'];
             this.slide = this.slidesService.getSlide(id);
 
-            this.slidesService.currentSlide = this.slide['id'];
+            this.slidesService.currentSlide = this.slide['id']; // can't use this.slide.id ??? -- Property 'id' does not exist on type 'Object'
             console.log('current slide in SLIDE:' ,this.slidesService.currentSlide)
         });
     }

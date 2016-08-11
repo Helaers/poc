@@ -6,8 +6,10 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
     selector: 'editor',
     template: `
         <p>{{message}}</p>
-        <a [routerLink]="['/editor/add-slide']">add slide</a>
-         <a [routerLink]="['/home']">Home</a>
+        <button [routerLink]="['/editor/add-slide']">ADD SLIDE</button>
+        <br>
+        <br>
+        <button [routerLink]="['/home']">Home</button>
     `,
     directives: [ROUTER_DIRECTIVES]
 })

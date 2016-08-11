@@ -5,8 +5,8 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
     selector: 'navigation',
     template: `
         <nav>
-            <a [routerLink]="['/editor']">Editor</a>
-            <a [routerLink]="['/slide-viewer/slide/1']">Viewer</a>
+            <button [routerLink]="['/editor']">Editor</button>
+            <button [routerLink]="['/slide-viewer/slide/1']">Viewer</button>
         </nav>
     `,
     directives: [ROUTER_DIRECTIVES]
