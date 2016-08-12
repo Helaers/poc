@@ -9,13 +9,12 @@ import { SlidesService } from '../services/slides.service';
     selector: 'slide-viewer',
     template: `
         <p>Slide viewer: {{message}}</p>
-            <button (click)="prevSlide(currentSlide)">Prev</button>
-            <button (click)="nextSlide(currentSlide)">Next</button>
+            <button (click)="prevSlide()">Prev</button>
+            <button (click)="nextSlide()">Next</button>
             <br>
         <hr>
             <router-outlet></router-outlet>
         <hr>
-
         <button [routerLink]="['/home']">Home</button>
     `,
     directives: [ROUTER_DIRECTIVES, SlideComponent],
@@ -24,7 +23,8 @@ import { SlidesService } from '../services/slides.service';
 
 export class SlideViewerComponent {
 
-    private currentSlide:number = 3; // deze id zou ik van de slide.component moeten halen -- hoe?
+    private currentSlide:number; // deze id zou ik van de slide.component moeten halen -- hoe?
+    private totalSlides:number;
 
     constructor(
         private slidesService: SlidesService,
@@ -34,18 +34,35 @@ export class SlideViewerComponent {
     message = 'SLIDER-VIEWER';
 
 
-    ngAfterViewChecked() {
-        console.log('current slide in ngAfterView ', this.slidesService.currentSlide);
+    ngOnInit() {
+        this.currentSlide = this._getSlideFromUrl();
+        this.totalSlides = this._getTotalSlides();
     }
 
-    nextSlide(currentSlide:number) {
-        currentSlide = ++currentSlide;
-        this.router.navigate(['/slide-viewer/slide', currentSlide]);
+    _getSlideFromUrl() {
+        let url = this.router.url;
+        let index = url.lastIndexOf('/');
+        return +url.substr(index+1);
     }
 
-    prevSlide(currentSlide:number) {
-        currentSlide = --currentSlide;
-        this.router.navigate(['/slide-viewer/slide', currentSlide]);
+    _getTotalSlides() {
+        let slides = this.slidesService.getAll();
+        return slides.length;
+    }
+
+    nextSlide() {
+        if (this.currentSlide < this.totalSlides) {
+            this.currentSlide = ++this.currentSlide;
+            this.router.navigate(['/slide-viewer/slide', this.currentSlide]);
+        }
+        
+    }
+
+    prevSlide() {
+        if (this.currentSlide > 1) {
+            this.currentSlide = --this.currentSlide;
+            this.router.navigate(['/slide-viewer/slide', this.currentSlide]);
+        }  
     }
 
 }
