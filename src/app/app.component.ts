@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { ViewComponent } from './containers/view.component';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
   moduleId: module.id,
@@ -9,9 +9,9 @@ import { ViewComponent } from './containers/view.component';
   <h1>
     {{title}}
   </h1>
-  <view></view>
+  <router-outlet></router-outlet>
   `,
-  directives: [ViewComponent]
+  directives: [ROUTER_DIRECTIVES]
 })
 export class AppComponent {
   title = 'app works!';

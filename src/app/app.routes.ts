@@ -2,7 +2,7 @@ import { provideRouter, RouterConfig } from '@angular/router';
 
 import { HomeComponent } from './containers/home.component';
 import { EditorComponent } from './containers/editor.component';
-import { SlideViewerComponent } from './containers/slide-viewer.component';
+import { ViewerComponent } from './containers/viewer.component';
 import { AddSlideComponent } from './containers/add-slide.component';
 
 import { SlideComponent } from './components/slide.component';
@@ -26,8 +26,8 @@ const routes: RouterConfig = [
         component: AddSlideComponent
     },
     { 
-        path: 'slide-viewer', 
-        component: SlideViewerComponent,
+        path: 'viewer', 
+        component: ViewerComponent,
         children: [
             { 
                 path: '', 
