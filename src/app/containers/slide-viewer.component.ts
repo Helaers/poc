@@ -54,8 +54,7 @@ export class SlideViewerComponent {
         if (this.currentSlide < this.totalSlides) {
             this.currentSlide = ++this.currentSlide;
             this.router.navigate(['/slide-viewer/slide', this.currentSlide]);
-        }
-        
+        } 
     }
 
     prevSlide() {
