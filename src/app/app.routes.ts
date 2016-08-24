@@ -1,6 +1,6 @@
 import { provideRouter, RouterConfig } from '@angular/router';
 
-import { HomeComponent } from './containers/home.component';
+import { HomeComponent } from './containers/home/home.component';
 import { EditorComponent } from './containers/editor.component';
 import { ViewerComponent } from './containers/viewer.component';
 import { AddSlideComponent } from './containers/add-slide.component';

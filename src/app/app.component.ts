@@ -5,12 +5,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 @Component({
   moduleId: module.id,
   selector: 'app-root',
-  template: `
-  <h1>
-    {{title}}
-  </h1>
-  <router-outlet></router-outlet>
-  `,
+  templateUrl: 'app.component.html',
   directives: [ROUTER_DIRECTIVES]
 })
 export class AppComponent {

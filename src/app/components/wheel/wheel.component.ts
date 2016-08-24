@@ -30,6 +30,7 @@ export class WheelComponent {
     showPenDropdown: Boolean = false;
     showAnswersDropdown: Boolean = false;
 
+    // functions
     nextSlide() {
         if (this.current < this.total) {
             this.current = ++this.current;

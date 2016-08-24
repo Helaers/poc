@@ -1,0 +1,14 @@
+.home-wrapper {
+    text-align: center;
+}
+
+.home__bordboek {
+    display: inline-block;
+    width: 95%;
+}
+
+@media (min-width: 1200px) {
+    .home__bordboek {
+        width: 1063px;
+    }
+}
