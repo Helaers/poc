@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
-import { WheelComponent } from '../components/wheel.component';
+import { WheelComponent } from '../components/wheel/wheel.component';
 import { NavigationComponent } from './navigation.component';
 
 @Component({

@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 import { ROUTER_DIRECTIVES, Router } from '@angular/router';
 
 import { SlideComponent } from '../components/slide.component';
-import { WheelComponent } from '../components/wheel.component';
+import { WheelComponent } from '../components/wheel/wheel.component';
 import { SlidesService } from '../services/slides.service';
 
 @Component({
@@ -13,10 +13,14 @@ import { SlidesService } from '../services/slides.service';
             <br>
         <hr>
             <router-outlet></router-outlet>
+
+            <div>
+                <span>Slide: {{currentSlide}}/{{totalSlides}}</span>
+            </div>
         <hr>
         
         <br>
-        <wheel [current]="currentSlide" [total]="totalSlides"></wheel>
+        <wheel [current]="currentSlide" [total]="totalSlides" (sendSlideId)="getCurrentSlide($event)"></wheel>
         <br>
 
         <button [routerLink]="['/home']">Home</button>
@@ -38,7 +42,16 @@ export class ViewerComponent {
 
     ngOnInit() {
         this.currentSlide = this._getSlideFromUrl();
+        console.log(this.currentSlide);
         this.totalSlides = this._getTotalSlides();
+    }
+
+    ngAfterViewInit() {
+        this.currentSlide = this._getSlideFromUrl();
+    }
+
+    getCurrentSlide(currentSlide:number) {
+        this.currentSlide = currentSlide;
     }
 
     _getSlideFromUrl() {

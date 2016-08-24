@@ -14,7 +14,6 @@ export class SlidesService {
     public currentSlide:number;
 
     getAll() {
-        console.log('get slides:', SLIDES);
         return SLIDES;
     }
 
