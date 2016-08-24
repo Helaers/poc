@@ -2,13 +2,33 @@
     text-align: center;
 }
 
-.home__bordboek {
+.home__bordboek-wrapper {
     display: inline-block;
     width: 95%;
+}
+
+.home__bordboek {
+    max-width: 100%;
+}
+
+.home_btn-bordles {
+    cursor: pointer;
+    position: absolute;
+    top: 8%;
+    left: 46%;
+    width: 40px;
+    height: 40px;
+    background: url('./app/images/btn-bordles.png');
+    background-size: 100%;
 }
 
 @media (min-width: 1200px) {
     .home__bordboek {
         width: 1063px;
+    }
+
+    .home_btn-bordles {
+        top: 6%;
+        left: 46%;
     }
 }
