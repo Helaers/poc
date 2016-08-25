@@ -2,29 +2,14 @@ import { Component, Output, EventEmitter } from '@angular/core';
 
 import { ROUTER_DIRECTIVES, Router } from '@angular/router';
 
-import { SlideComponent } from '../components/slide.component';
-import { WheelComponent } from '../components/wheel/wheel.component';
-import { SlidesService } from '../services/slides.service';
+import { SlideComponent } from '../../components/slide.component';
+import { WheelComponent } from '../../components/wheel/wheel.component';
+import { SlidesService } from '../../services/slides.service';
 
 @Component({
     selector: 'viewer',
-    template: `
-        <p>Slide viewer:</p>
-            <br>
-        <hr>
-            <router-outlet></router-outlet>
-
-            <div>
-                <span>Slide: {{currentSlide}}/{{totalSlides}}</span>
-            </div>
-        <hr>
-        
-        <br>
-        <wheel [current]="currentSlide" [total]="totalSlides" (sendSlideId)="getCurrentSlide($event)"></wheel>
-        <br>
-
-        <button [routerLink]="['/home']">Home</button>
-    `,
+    templateUrl: 'app/containers/viewer/viewer.component.html',
+    styleUrls: ['app/containers/viewer/viewer.component.css'],
     directives: [ROUTER_DIRECTIVES, SlideComponent, WheelComponent],
     providers: [SlidesService]
 })

@@ -9,6 +9,8 @@ import { SlidesService } from '../services/slides.service';
         <div *ngIf="slide">
             <h3><span>#{{slide.id}}</span> {{slide.title}}</h3>
             <p>this is a some body text for the slide</p>
+
+            <div [innerHtml]="slide.html"></div>
         </div>
     `,
     providers: [SlidesService]
@@ -28,7 +30,7 @@ export class SlideComponent {
             this.slide = this.slidesService.getSlide(id);
 
             this.slidesService.currentSlide = this.slide['id']; // can't use this.slide.id ??? -- Property 'id' does not exist on type 'Object'
-            console.log('current slide in SLIDE:' ,this.slidesService.currentSlide)
+            //console.log('current slide in SLIDE:' ,this.slidesService.currentSlide)
         });
     }
 
