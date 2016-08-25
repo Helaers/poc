@@ -1,18 +1,16 @@
 import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES, ActivatedRoute, Params } from '@angular/router';
 
-import { SlidesService } from '../services/slides.service';
+import { SlidesService } from '../../services/slides.service';
 
 @Component({
     selector: 'slide',
     template: `
-        <div *ngIf="slide">
-            <h3><span>#{{slide.id}}</span> {{slide.title}}</h3>
-            <p>this is a some body text for the slide</p>
-
+        <div class="slide" *ngIf="slide">
             <div [innerHtml]="slide.html"></div>
         </div>
     `,
+    styleUrls: ['app/components/slide/slide.component.css'],
     providers: [SlidesService]
 })
 

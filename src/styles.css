@@ -12,3 +12,8 @@ button, a {
 * {
     box-sizing: border-box;
 }
+
+.slide__image {
+    display: inline-block;
+    width: 100%;
+}

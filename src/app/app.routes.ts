@@ -5,7 +5,7 @@ import { EditorComponent } from './containers/editor.component';
 import { ViewerComponent } from './containers/viewer/viewer.component';
 import { AddSlideComponent } from './containers/add-slide.component';
 
-import { SlideComponent } from './components/slide.component';
+import { SlideComponent } from './components/slide/slide.component';
 
 const routes: RouterConfig = [
     {

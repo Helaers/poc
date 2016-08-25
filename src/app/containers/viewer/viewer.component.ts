@@ -2,7 +2,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 
 import { ROUTER_DIRECTIVES, Router } from '@angular/router';
 
-import { SlideComponent } from '../../components/slide.component';
+import { SlideComponent } from '../../components/slide/slide.component';
 import { WheelComponent } from '../../components/wheel/wheel.component';
 import { SlidesService } from '../../services/slides.service';
 
