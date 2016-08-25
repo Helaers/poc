@@ -1,7 +1,7 @@
 .wheel-container {
     /*position: absolute;*/
-    left: 20px;
-    top: 200px;
+    right: 90px;
+    top: 50px;
     width: 182px;
     height: 182px;
 }
@@ -90,7 +90,7 @@
     top: 113px;
     left: 106px;
     width: 160px;
-    height: 70px;
+    height: 67px;
     background: url('./app/images/wheel-answers-dropdown.png');
     background-size: 100%;
 }

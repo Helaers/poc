@@ -11,6 +11,7 @@
     max-width: 100%;
 }
 
+/* TODO: fix button position on bordboek */
 .home_btn-bordles {
     cursor: pointer;
     position: absolute;
@@ -28,7 +29,7 @@
     }
 
     .home_btn-bordles {
-        top: 6%;
+        top: 35px;
         left: 46%;
     }
 }
