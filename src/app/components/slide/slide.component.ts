@@ -2,15 +2,17 @@ import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES, ActivatedRoute, Params } from '@angular/router';
 
 import { SlidesService } from '../../services/slides.service';
+import { InnerContent } from '../../directives/innercontent';
 
 @Component({
     selector: 'slide',
     template: `
         <div class="slide" *ngIf="slide">
-            <div [innerHtml]="slide.html"></div>
+            <div [innerContent]="slide.html"></div>
         </div>
     `,
     styleUrls: ['app/components/slide/slide.component.css'],
+    directives: [InnerContent],
     providers: [SlidesService]
 })
 
