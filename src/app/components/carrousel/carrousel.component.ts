@@ -11,6 +11,7 @@ import { NgStyle } from '@angular/common';
 export class CarrouselComponent {
 
     @Input() showCarrousel:boolean;
+    @Input() slides:Array<any>;
 
     @Output() closeCarrousel: EventEmitter<boolean> = new EventEmitter<boolean>();
 

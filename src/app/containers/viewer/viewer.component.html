@@ -15,7 +15,7 @@
         <span class="viewer__page--current">{{currentSlide}}</span> / {{totalSlides}}
     </div>
 
-    <carrousel [showCarrousel]="carrousel" (closeCarrousel)="getCarrouselState($event)"></carrousel>
+    <carrousel [slides]="slides" [showCarrousel]="carrousel" (closeCarrousel)="getCarrouselState($event)"></carrousel>
 </section>
 
 <wheel [current]="currentSlide" [total]="totalSlides" (sendSlideId)="getCurrentSlide($event)"></wheel>

@@ -2,13 +2,10 @@
     <button class="carrousel__prev" (click)="prev()"></button>
         <div class="carrousel__overflow">
             <div class="carrousel__container" [ngStyle]="carrouselStyle">
-                <div class="carrousel__thumb">thumb 1</div>
-                <div class="carrousel__thumb">thumb 2</div>
-                <div class="carrousel__thumb">thumb 3</div>
-                <div class="carrousel__thumb">thumb 4</div>
-                <div class="carrousel__thumb">thumb 5</div>
-                <div class="carrousel__thumb">thumb 6</div>
-                <div class="carrousel__thumb">thumb 7</div>
+                <div class="carrousel__thumb" *ngFor="let slide of slides">
+                    <span class="carrousel__number">{{slide.id}}</span>
+                    <img class="carrousel__image" [src]="slide.thumb" />
+                </div>
             </div>
         </div>
     <button class="carrousel__next" (click)="next()"></button>

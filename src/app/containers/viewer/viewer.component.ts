@@ -20,6 +20,7 @@ export class ViewerComponent {
     private currentSlide:number; // komt voorlopig van URL... deze id zou ik van de slide.component moeten halen -- hoe? /
     private totalSlides:number;
     private carrousel: boolean = false;
+    private slides:Array<any> = [];
 
     constructor(
         private slidesService: SlidesService,
@@ -30,7 +31,8 @@ export class ViewerComponent {
     ngOnInit() {
         this.currentSlide = this._getSlideFromUrl();
         console.log(this.currentSlide);
-        this.totalSlides = this._getTotalSlides();
+        this.slides = this.slidesService.getAll();
+        this.totalSlides = this.slides.length;
     }
 
     ngAfterViewInit() {
@@ -45,11 +47,6 @@ export class ViewerComponent {
         let url = this.router.url;
         let index = url.lastIndexOf('/');
         return +url.substr(index+1);
-    }
-
-    _getTotalSlides() {
-        let slides = this.slidesService.getAll();
-        return slides.length;
     }
 
     toggleCarrousel() {
