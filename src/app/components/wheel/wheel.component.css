@@ -4,6 +4,7 @@
     top: 50px;
     width: 182px;
     height: 182px;
+    z-index: 99999;
 }
 
 .wheel__basic,
