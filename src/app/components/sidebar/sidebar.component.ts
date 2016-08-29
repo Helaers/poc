@@ -1,4 +1,4 @@
-import { Component, ElementRef } from '@angular/core';
+import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
@@ -6,16 +6,9 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
     templateUrl: 'app/components/sidebar/sidebar.component.html',
     styleUrls: ['app/components/sidebar/sidebar.component.css'],
     directives: [ROUTER_DIRECTIVES],
-    host: {
-        '(document:click)': 'onDocumentClick($event)',
-    }
 })
 
 export class SidebarComponent {
-
-    constructor(
-        private _eref: ElementRef
-    ) {}
 
     showLeftSidebar: Boolean = false;
     showRightSidebar: Boolean = false;
@@ -32,13 +25,5 @@ export class SidebarComponent {
         if (this.showLeftSidebar) {
             this.showLeftSidebar = false;
         }
-    }
-
-    onDocumentClick(event) {
-         // cfr host @Component
-        if (!this._eref.nativeElement.contains(event.target)) {
-            this.showLeftSidebar = false;
-            this.showRightSidebar = false;
-        } 
     }
 }

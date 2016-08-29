@@ -4,7 +4,8 @@
 
 .home__bordboek-wrapper {
     display: inline-block;
-    width: 95%;
+    width: 82%;
+    position: relative;
 }
 
 .home__bordboek {
@@ -15,8 +16,8 @@
 .home_btn-bordles {
     cursor: pointer;
     position: absolute;
-    top: 8%;
-    left: 46%;
+    top: 3.5%;
+    left: 43%;
     width: 40px;
     height: 40px;
     background: url('./app/images/btn-bordles.png');
@@ -26,10 +27,5 @@
 @media (min-width: 1200px) {
     .home__bordboek {
         width: 1063px;
-    }
-
-    .home_btn-bordles {
-        top: 35px;
-        left: 46%;
     }
 }
