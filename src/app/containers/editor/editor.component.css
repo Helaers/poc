@@ -1,8 +1,20 @@
 .editor {
-    padding: 20px;
     width: 100%;
     height: 100vh;
     font-family: 'Roboto', sans-serif;
+}
+
+.editor__header,
+.editor__subheader,
+.editor__body {
+    padding: 0 5%;
+}
+
+.editor__header{
+    padding-top: 20px;
+    box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 5;
 }
 .header__label {
     width: 31px;
@@ -17,9 +29,16 @@
     font-size: 32px;
     color: #7a7a7a;
     margin-top: 5px;
-
-    width: 75%;
     display: inline-block;
+}
+@media (max-width: 850px) {
+    .header__title {
+        font-size: 25px;
+    }
+    .header__label {
+        width: 25px;
+        margin-top: 2px;
+    }
 }
 
 .header__buttons {
@@ -46,4 +65,29 @@
     width: 40px;
     background: url('./app/images/btn-editor-home.png');
     background-size: 100%;
+}
+
+
+.editor__subheader,
+.editor__footer {
+    position: relative;
+    z-index: 0;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#aaa81b+0,8f8d16+100 */
+    background: #aaa81b; /* Old browsers */
+    background: -moz-linear-gradient(45deg,  #aaa81b 0%, #8f8d16 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg,  #aaa81b 0%,#8f8d16 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg,  #aaa81b 0%,#8f8d16 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aaa81b', endColorstr='#8f8d16',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+.subheader__title {
+    display: inline-block;
+    font-weight: 400;
+    color: #fff;
+}
+
+.editor__footer {
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    bottom: 0;
 }
