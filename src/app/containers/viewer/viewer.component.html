@@ -4,7 +4,7 @@
             <img class="header__label" src="./app/images/bordles-header-label.png" /> Getallen en getalpatronen
         </h1>
         <div class="header__buttons">
-            <a class="header__button--overview"></a>
+            <a class="header__button--overview" (click)="toggleCarrousel()"></a>
             <a class="header__button--bordboek" [routerLink]="['/home']"></a>
         </div>
     </header>
@@ -14,6 +14,8 @@
     <div class="viewer__page">
         <span class="viewer__page--current">{{currentSlide}}</span> / {{totalSlides}}
     </div>
+
+    <carrousel [showCarrousel]="carrousel" (closeCarrousel)="getCarrouselState($event)"></carrousel>
 </section>
 
 <wheel [current]="currentSlide" [total]="totalSlides" (sendSlideId)="getCurrentSlide($event)"></wheel>

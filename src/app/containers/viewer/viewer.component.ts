@@ -4,13 +4,14 @@ import { ROUTER_DIRECTIVES, Router } from '@angular/router';
 
 import { SlideComponent } from '../../components/slide/slide.component';
 import { WheelComponent } from '../../components/wheel/wheel.component';
+import { CarrouselComponent } from '../../components/carrousel/carrousel.component';
 import { SlidesService } from '../../services/slides.service';
 
 @Component({
     selector: 'viewer',
     templateUrl: 'app/containers/viewer/viewer.component.html',
     styleUrls: ['app/containers/viewer/viewer.component.css'],
-    directives: [ROUTER_DIRECTIVES, SlideComponent, WheelComponent],
+    directives: [ROUTER_DIRECTIVES, SlideComponent, WheelComponent, CarrouselComponent],
     providers: [SlidesService]
 })
 
@@ -18,6 +19,7 @@ export class ViewerComponent {
 
     private currentSlide:number; // komt voorlopig van URL... deze id zou ik van de slide.component moeten halen -- hoe? /
     private totalSlides:number;
+    private carrousel: boolean = false;
 
     constructor(
         private slidesService: SlidesService,
@@ -48,5 +50,13 @@ export class ViewerComponent {
     _getTotalSlides() {
         let slides = this.slidesService.getAll();
         return slides.length;
+    }
+
+    toggleCarrousel() {
+        this.carrousel = !this.carrousel;
+    }
+
+    getCarrouselState(state:boolean) {
+        this.carrousel = state;
     }
 }

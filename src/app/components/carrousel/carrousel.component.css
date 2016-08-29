@@ -1,0 +1,82 @@
+.carrousel {
+  position: fixed;
+  margin: 0 auto;
+  bottom: -230px;
+  left: 0;
+  right: 0;
+  padding: 50px 35px 0;
+  height: 230px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+
+  transition: bottom 0.4s ease-in-out;
+}
+
+.carrousel.active {
+  bottom: 0;
+}
+
+.carrousel__overflow {
+  width: 700px;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.carrousel__container {
+  -webkit-transition: margin-left 0.3s ease-in-out;
+  -moz-transition: margin-left 0.3s ease-in-out;
+  -ms-transition: margin-left 0.3s ease-in-out;
+  -o-transition: margin-left 0.3s ease-in-out;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+.carrousel__thumb {
+  width: 230px;
+  height: 100px;
+  background: hotpink;
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 7px;
+  position: relative;
+}
+
+.carrousel__close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: url('./app/images/btn-close.png');
+  background-size: 100%;
+}
+
+.carrousel__next,
+.carrousel__prev {
+  width: 30px;
+  height: 30px;
+}
+
+.carrousel__next {
+  background: url('./app/images/btn-arrow-right.png');
+  background-size: 100%;
+}
+
+.carrousel__next:active {
+  transform: rotate(180deg);
+  background: url('./app/images/btn-arrow-left.png');
+  background-size: 100%;
+}
+
+.carrousel__prev {
+  background: url('./app/images/btn-arrow-left.png');
+  background-size: 100%;
+}
+
+.carrousel__prev:active {
+  transform: rotate(180deg);
+  background: url('./app/images/btn-arrow-right.png');
+  background-size: 100%;
+}
