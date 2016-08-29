@@ -1,0 +1,49 @@
+.editor {
+    padding: 20px;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+.header__label {
+    width: 31px;
+    margin-top: 4px;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 5px;
+}
+.header__title {
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 32px;
+    color: #7a7a7a;
+    margin-top: 5px;
+
+    width: 75%;
+    display: inline-block;
+}
+
+.header__buttons {
+    display: inline-block;
+    vertical-align: middle;
+    float: right;
+    margin-top: 6px;
+}
+
+.header__button--bordboek,
+.header__button--addslide {
+    cursor: pointer;
+    display: inline-block;
+    height: 40px;
+}
+
+.header__button--addslide {
+    width: 160px;
+    margin-right: 15px;
+    background: url('./app/images/btn-editor-addslide.png');
+    background-size: 100%;
+}
+.header__button--bordboek {
+    width: 40px;
+    background: url('./app/images/btn-editor-home.png');
+    background-size: 100%;
+}
