@@ -29,4 +29,10 @@ export class EditorComponent {
         this.slides = this.slidesService.getAll();
         this.totalSlides = this.slides.length;
     }
+
+    toggleVisibility(id:number) {
+        this.slidesService.toggleVisibility(id);
+        let slides = this.slidesService.getAll();
+        console.log('slides in editor: ', slides);
+    }
 }
