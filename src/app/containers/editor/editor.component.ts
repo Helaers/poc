@@ -33,6 +33,5 @@ export class EditorComponent {
     toggleVisibility(id:number) {
         this.slidesService.toggleVisibility(id);
         this.slides = this.slidesService.getAll();
-        console.log('slides in editor: ', this.slides);
     }
 }

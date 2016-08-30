@@ -34,7 +34,6 @@ export class CarrouselComponent {
 
         // totalSlides = slides.length; // zou van service moeten komen
         this.carrouselStyle.width = (this.totalSlides * this.widthThumb * -1 + 24)+'px';
-        console.log('carrouselStyle', this.carrouselStyle);
 
         if (this.index >= this.totalSlides - this.thumbsToShow) {
             this.index = this.totalSlides - this.thumbsToShow;
@@ -44,13 +43,9 @@ export class CarrouselComponent {
             let value = this.index * this.widthThumb;
             this.carrouselStyle.marginLeft = value + 'px';
         }
-
-        console.log('end: ', this.carrouselStyle);
     }
 
     prev() {
-        console.log('clicked prev, index: ', this.index);
-
         if (this.index > 0) {
             this.index--;
             let value = this.index * this.widthThumb *3; // hardcoded x3
@@ -60,7 +55,6 @@ export class CarrouselComponent {
     }
 
     next() {
-        console.log('clicked next, index: ', this.index);
         if (this.index < this.totalSlides - this.thumbsToShow) {
             this.index++;
             let value = this.index * this.widthThumb *3;

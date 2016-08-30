@@ -30,7 +30,6 @@ export class ViewerComponent {
 
     ngOnInit() {
         this.currentSlide = this._getSlideFromUrl();
-        console.log(this.currentSlide);
         this.slides = this.slidesService.getAll();
         this.totalSlides = this.slides.length;
     }

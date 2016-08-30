@@ -4,7 +4,7 @@
             <div class="carrousel__container" [ngStyle]="carrouselStyle">
                 <div class="carrousel__thumb" *ngFor="let slide of slides">
                     <span class="carrousel__number">{{slide.id}}</span>
-                    <img class="carrousel__image" [src]="slide.thumb" (click)="goToSlide(slide)" [class.invisible]="!slide.visible" />
+                    <img class="carrousel__image" [src]="slide.thumb" (click)="goToSlide(slide)" [class.disabled]="!slide.visible" />
                 </div>
             </div>
         </div>

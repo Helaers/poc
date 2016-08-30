@@ -162,7 +162,7 @@
     overflow: hidden;
 }
 
-.thumbnail__image.invisible {
+.thumbnail__image.disabled {
     opacity: 0.4;
     box-shadow: none;
 }
