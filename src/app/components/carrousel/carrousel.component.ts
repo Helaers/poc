@@ -76,9 +76,12 @@ export class CarrouselComponent {
         }
     }
 
-    goToSlide(id:number) {
-        this.router.navigate(['/viewer/slide', id]);
-        this.sendSlideId.emit(id);
+    goToSlide(slide:any) {
+        if (!slide.visible) {
+            return;
+        }
+        this.router.navigate(['/viewer/slide', slide.id]);
+        this.sendSlideId.emit(slide.id);
         this.close();
     }
 }

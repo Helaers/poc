@@ -58,6 +58,7 @@
 
 .carrousel__next,
 .carrousel__prev {
+  cursor: pointer;
   display: inline-block;
   vertical-align: middle;
   width: 40px;
@@ -103,11 +104,23 @@
 }
 
 .carrousel__image {
+  cursor: pointer;
   width: 200px;
   box-shadow: 0 7px 15px -2px rgba(0, 0, 0, 0.23);
 }
 
-.carrousel__image:active,
+.carrousel__image.invisible {
+  cursor: default;
+  opacity: 0.4;
+  box-shadow: none;
+}
+
+/*.carrousel__image:active,
 .carrousel__image:hover {
   border: 3px solid #faba02;
 }
+
+.carrousel__image.invisible:active,
+.carrousel__image.invisible:hover, {
+  border: 0;
+}*/
