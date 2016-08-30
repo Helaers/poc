@@ -47,6 +47,14 @@ export class SlidesService {
         return SLIDES.find(item => item.id === id);
     }
 
+    addSlide(slide:any) {
+        SLIDES.push(slide);
+    }
+
+    removeSlide(slide:any) {
+        SLIDES.pop();
+    }
+
     toggleVisibility(id:number) {
         let slide = this.getSlide(id);
         slide.visible = !slide.visible;

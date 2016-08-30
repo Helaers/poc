@@ -210,3 +210,11 @@
     background: url('./app/images/btn-editor-play.png');
     background-size: 100%;
 }
+.thumbnail__button.edit{
+    background: url('./app/images/btn-editor-edit.png');
+    background-size: 100%;
+}
+.thumbnail__button.delete{
+    background: url('./app/images/btn-editor-delete.png');
+    background-size: 100%;
+}

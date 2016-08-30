@@ -4,7 +4,7 @@
             <img class="header__label" src="./app/images/editor-header-label.png" /> Getallen en getalpatronen
         </h1>
         <div class="header__buttons">
-            <a class="header__button--addslide" [routerLink]="['/editor/add-slide']"></a>
+            <a class="header__button--addslide" (click)="addUserSlide()"></a> <!--[routerLink]="['/editor/add-slide']"-->
             <a class="header__button--bordboek" [routerLink]="['/home']"></a>
         </div>
     </header>
@@ -22,6 +22,8 @@
                         <a class="thumbnail__button view" [class.invisible]="!slide.visible" (click)="toggleVisibility(slide.id)"></a>
                         <a class="thumbnail__button info"></a>
                         <a class="thumbnail__button play" [routerLink]="['/viewer/slide', slide.id]"></a>
+                        <a class="thumbnail__button edit" *ngIf="slide.type === 'user'"></a>
+                        <a class="thumbnail__button delete" *ngIf="slide.type === 'user'" (click)="delete(slide)"></a>
                     </div>
                 </div>
             </li>

@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { NgStyle } from '@angular/common';
 
 import { ROUTER_DIRECTIVES, Router } from '@angular/router';
@@ -7,7 +7,8 @@ import { ROUTER_DIRECTIVES, Router } from '@angular/router';
     selector: 'carrousel',
     templateUrl: 'app/components/carrousel/carrousel.component.html',
     styleUrls: ['app/components/carrousel/carrousel.component.css'],
-    directives: [NgStyle, ROUTER_DIRECTIVES]
+    directives: [NgStyle, ROUTER_DIRECTIVES],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class CarrouselComponent {
@@ -32,7 +33,7 @@ export class CarrouselComponent {
 
     ngOnInit() {
 
-        // totalSlides = slides.length; // zou van service moeten komen
+        this.totalSlides = this.slides.length; // zou van service moeten komen
         this.carrouselStyle.width = (this.totalSlides * this.widthThumb * -1 + 24)+'px';
 
         if (this.index >= this.totalSlides - this.thumbsToShow) {

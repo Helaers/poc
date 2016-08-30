@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Dragula, DragulaService } from 'ng2-dragula/ng2-dragula';
 
 import { ROUTER_DIRECTIVES, Router } from '@angular/router';
 
@@ -10,8 +11,8 @@ import { SlidesService } from '../../services/slides.service';
     selector: 'editor',
     templateUrl: 'app/containers/editor/editor.component.html' ,
     styleUrls: ['app/containers/editor/editor.component.css'] ,
-    directives: [ROUTER_DIRECTIVES, WheelComponent],
-    providers: [SlidesService]
+    directives: [ROUTER_DIRECTIVES, WheelComponent, Dragula],
+    providers: [SlidesService, DragulaService]
 })
 
 export class EditorComponent {
@@ -33,5 +34,14 @@ export class EditorComponent {
     toggleVisibility(id:number) {
         this.slidesService.toggleVisibility(id);
         this.slides = this.slidesService.getAll();
+    }
+
+    addUserSlide() {
+        let slide = { id: 8, html:["<img class='slide__image' src='./app/images/slide8.png' />"], thumb: './app/images/thumb8.png', visible: true, type: 'user' };
+        this.slidesService.addSlide(slide);
+        this.slides = this.slidesService.getAll();
+    }
+    delete(slide:any) {
+        this.slidesService.removeSlide(slide);
     }
 }
