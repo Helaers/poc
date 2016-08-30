@@ -29,6 +29,12 @@ button, a {
     background-color: #fff;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.28);
     top: 96px;
+    cursor: -webkit-grab; 
+    cursor: -moz-grab;
+}
+.slide__label--draggable:active {
+    cursor: -webkit-grabbing; 
+    cursor: -moz-grabbing;
 }
 
 .slide__label--draggable.one {

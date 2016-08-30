@@ -161,6 +161,13 @@
     width: 88%;
     height: 167px;
     overflow: hidden;
+    cursor: -webkit-grab; 
+    cursor: -moz-grab;
+}
+
+.thumbnail__hover-container:active {
+    cursor: -webkit-grabbing; 
+    cursor: -moz-grabbing;
 }
 
 .thumbnail__image.disabled {
