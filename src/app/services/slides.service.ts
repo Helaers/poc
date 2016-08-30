@@ -43,6 +43,10 @@ export class SlidesService {
         return SLIDES;
     }
 
+    setSlides(slides) {
+        SLIDES = slides;
+    }
+
     getSlide(id:number) {
         return SLIDES.find(item => item.id === id);
     }
@@ -52,7 +56,11 @@ export class SlidesService {
     }
 
     removeSlide(slide:any) {
-        SLIDES.pop();
+        let slideToRemove = SLIDES.find(item => item.id === slide.id);
+        let index = SLIDES.indexOf(slideToRemove);
+        if (index > -1) {
+            SLIDES.splice(index, 1);
+        }
     }
 
     toggleVisibility(id:number) {

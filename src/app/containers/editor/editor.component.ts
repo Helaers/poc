@@ -22,8 +22,11 @@ export class EditorComponent {
 
     constructor(
         private slidesService: SlidesService,
-        private router: Router) { 
-
+        private router: Router,
+        private dragulaService: DragulaService) { 
+            dragulaService.drop.subscribe((value) => {
+                this.onDrop();
+            });
         }
 
     ngOnInit() {
@@ -43,5 +46,19 @@ export class EditorComponent {
     }
     delete(slide:any) {
         this.slidesService.removeSlide(slide);
+        this.orderSlides();
+    }
+
+    private onDrop() {
+        // do something
+        this.orderSlides();
+        // send to "backend"
+        this.slidesService.setSlides(this.slides);
+    }
+
+    private orderSlides() {
+        for (let i = 0; i<this.slides.length; i++) {
+            this.slides[i].id = i+1;
+        }
     }
 }
