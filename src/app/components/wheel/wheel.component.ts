@@ -1,6 +1,8 @@
 import { Component, Input, Output, EventEmitter, ElementRef } from '@angular/core';
 import { ROUTER_DIRECTIVES, Router } from '@angular/router';
 
+import { SlidesService } from '../../services/slides.service';
+
 import { Draggable } from '../../directives/draggable';
 
 @Component({
@@ -8,6 +10,7 @@ import { Draggable } from '../../directives/draggable';
     templateUrl: 'app/components/wheel/wheel.component.html',
     styleUrls: ['app/components/wheel/wheel.component.css'],
     directives: [Draggable],
+    providers: [SlidesService],
     host: {
         '(document:click)': 'onDocumentClick($event)',
     }
@@ -21,6 +24,7 @@ export class WheelComponent {
     @Output() sendSlideId: EventEmitter<number> = new EventEmitter<number>();
 
     constructor(
+        private slidesService: SlidesService,
         private router: Router,
         private _eref: ElementRef
     ){}
@@ -34,18 +38,33 @@ export class WheelComponent {
     nextSlide() {
         if (this.current < this.total) {
             this.current = ++this.current;
-            this.router.navigate(['/viewer/slide', this.current]);
-            this.sendSlideId.emit(this.current);
+
+            let slide = this.slidesService.getSlide(this.current);
+
+            if (slide.visible) {
+                this.router.navigate(['/viewer/slide', this.current]);
+                this.sendSlideId.emit(this.current);
+            } else {
+                this.nextSlide();
+            }
         } 
     }
 
     prevSlide() {
         if (this.current > 1) {
             this.current = --this.current;
-            this.router.navigate(['/viewer/slide', this.current]);
-            this.sendSlideId.emit(this.current);
+
+            let slide = this.slidesService.getSlide(this.current);
+            if (slide.visible) {
+                this.router.navigate(['/viewer/slide', this.current]);
+                this.sendSlideId.emit(this.current);
+            } else {
+                this.prevSlide();
+            }
         }  
     }
+
+
 
     toggleExpandedView() {
         this.expanded = !this.expanded;
