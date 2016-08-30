@@ -13,7 +13,7 @@
     </div>
 
     <section class="editor__body">
-        <ul class="editor__thumbnail-container">
+        <ul class="editor__thumbnail-container" [dragula]='"slides-bag"' [dragulaModel]='slides'>
             <li class="editor__thumbnail" *ngFor="let slide of slides">
                 <span class="thumbnail__number">{{slide.id}}</span>
                 <img class="thumbnail__image" [src]="slide.thumb" [class.disabled]="!slide.visible" />

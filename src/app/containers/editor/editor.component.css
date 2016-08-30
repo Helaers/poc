@@ -93,7 +93,7 @@
 }
 
 .editor__body {
-    min-height: 90%;
+    /*min-height: 90%;*/
     margin-bottom: -10px; 
 }
 .editor__body:after {
@@ -110,6 +110,7 @@
 ------------------ */
 
 .editor__thumbnail-container {
+    position: relative;
     list-style-type: none;
     width: 800px;
     margin: 0 auto;
