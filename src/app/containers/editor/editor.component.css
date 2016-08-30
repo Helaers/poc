@@ -162,6 +162,11 @@
     overflow: hidden;
 }
 
+.thumbnail__image.invisible {
+    opacity: 0.4;
+    box-shadow: none;
+}
+
 .thumbnail__hover {
     position: absolute;
     bottom: -50px;
@@ -191,6 +196,10 @@
 
 .thumbnail__button.view{
     background: url('./app/images/btn-editor-view.png');
+    background-size: 100%;
+}
+.thumbnail__button.view.invisible{
+    background: url('./app/images/btn-editor-view-invisible.png');
     background-size: 100%;
 }
 .thumbnail__button.info{
