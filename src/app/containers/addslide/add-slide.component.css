@@ -91,7 +91,30 @@
     bottom: 0;
     margin-top: 40px;
     text-align: center;
+    padding: 15px 0;
 }
+
+.footer-button,
+.footer-button--ghost {
+    cursor: pointer;
+    padding: 16px 37px 18px;
+    border-radius: 70px;
+    font-size: 16px;
+}
+
+.footer-button {
+    padding: 19px 45px 20px;
+    background-color: #fff;
+    color: #aaa81b;
+}
+
+.footer-button--ghost {
+    background: none;
+    color: #fff;
+    border: 2px solid #fff;
+    margin-right: 20px;
+}
+
 
 .editor__body {
     /*min-height: 90%;*/
