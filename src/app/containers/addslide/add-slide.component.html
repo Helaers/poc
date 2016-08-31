@@ -18,25 +18,25 @@
 
             <ul class="add-slide__button-bar">
                 <li class="button-bar__item">
-                    <a class="button_bar__button"><img class="button_bar__icon" src="./app/images/icn-text.png"></a>
+                    <a class="button_bar__button" [class.active]="showText" (click)="showText = !showText"><img class="button_bar__icon" src="./app/images/icn-text.png"></a>
                 </li>
                 <li class="button-bar__item">
-                    <a class="button_bar__button"><img class="button_bar__icon" src="./app/images/icn-image.png"></a>
+                    <a class="button_bar__button"><img class="button_bar__icon image" src="./app/images/icn-image.png"></a>
                 </li>
                 <li class="button-bar__item">
-                    <a class="button_bar__button"><img class="button_bar__icon" src="./app/images/icn-video.png"></a>
+                    <a class="button_bar__button"><img class="button_bar__icon video" src="./app/images/icn-video.png"></a>
                 </li>
                 <li class="button-bar__item">
-                    <a class="button_bar__button"><img class="button_bar__icon" src="./app/images/icn-audio.png"></a>
+                    <a class="button_bar__button"><img class="button_bar__icon audio" src="./app/images/icn-audio.png"></a>
                 </li>
                 <li class="button-bar__item">
-                    <a class="button_bar__button"><img class="button_bar__icon" src="./app/images/icn-link.png"></a>
+                    <a class="button_bar__button"><img class="button_bar__icon link" src="./app/images/icn-link.png"></a>
                 </li>
                 <li class="button-bar__item">
-                    <a class="button_bar__button"><img class="button_bar__icon" src="./app/images/icn-bingel.png"></a>
+                    <a class="button_bar__button"><img class="button_bar__icon bingel" src="./app/images/icn-bingel.png"></a>
                 </li>
                 <li class="button-bar__item">
-                    <a class="button_bar__button"><img class="button_bar__icon" src="./app/images/icn-trash.png"></a>
+                    <a class="button_bar__button red"><img class="button_bar__icon" src="./app/images/icn-trash.png"></a>
                 </li>
             </ul>
 
@@ -44,7 +44,10 @@
         
     </section>
 
-    <footer class="editor__footer"></footer>
+    <footer class="editor__footer">
+        <button>annuleren</button>
+        <button>opslaan</button>
+    </footer>
 </section>
 
 <wheel></wheel>
