@@ -12,10 +12,17 @@
     position: absolute;
     top: 0;
     left: 0;
+    /*cursor: -webkit-grab; 
+    cursor: -moz-grab;*/
 }
 
+/*.wheel__expanded:active {
+    cursor: -webkit-grabbing; 
+    cursor: -moz-grabbing;
+}*/
+
 .wheel__basic {
-    top: 44px;
+    top: 43px;
     width: 182px;
     height: 96px;
     background: url('./app/images/wheel-small.png');

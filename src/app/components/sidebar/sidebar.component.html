@@ -1,5 +1,7 @@
 <section class="sidebar sidebar--left" [class.slideSidebar]="showLeftSidebar">
     <div class="sidebar__tools">
+        <img class="sidebar__tools-date--dropdown" src="./app/images/sidebar-date-left.png" *ngIf="showDate" />
+        <a class="sidebar__tools-date" (click)="showDate = !showDate"></a>
         <a href class="sidebar__tools-bordles-editor" [routerLink]="['/editor']"></a>
     </div>
     <div class="sidebar__toggle sidebar__toggle--left" (click)="toggleLeftSidebar()">

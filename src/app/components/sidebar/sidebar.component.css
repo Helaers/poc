@@ -50,7 +50,8 @@
     background-size: 100%;
 }
 
-.sidebar__tools-bordles-editor {
+.sidebar__tools-bordles-editor, 
+.sidebar__tools-date {
     cursor: pointer;
     display: block;
     position: absolute;
@@ -58,6 +59,21 @@
     left: 0;
     width: 25px;
     height: 31px;
+}
+
+.sidebar__tools-bordles-editor {
+    top: 258px;
+}
+
+.sidebar__tools-date {
+    top: 69px;
+}
+
+.sidebar__tools-date--dropdown {
+    position: absolute;
+    top: 70px;
+    left: -7px;
+    width: 157px;
 }
 
 
