@@ -1,0 +1,114 @@
+.editor {
+    width: 100%;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+.editor__header,
+.editor__subheader,
+.editor__body {
+    padding: 0 5%;
+}
+
+.editor__header{
+    padding-top: 20px;
+    box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 5;
+}
+.header__label {
+    width: 31px;
+    margin-top: 4px;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 5px;
+}
+.header__title {
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 32px;
+    color: #7a7a7a;
+    margin-top: 5px;
+    display: inline-block;
+}
+@media (max-width: 850px) {
+    .header__title {
+        font-size: 25px;
+    }
+    .header__label {
+        width: 25px;
+        margin-top: 2px;
+    }
+}
+
+.header__buttons {
+    display: inline-block;
+    vertical-align: middle;
+    float: right;
+    margin-top: 6px;
+}
+
+.header__button--bordboek,
+.header__button--overview {
+    cursor: pointer;
+    display: inline-block;
+    height: 40px;
+}
+
+.header__button--overview {
+    width: 40px;
+    margin-right: 15px;
+    background: url('./app/images/btn-editor-overview.png');
+    background-size: 100%;
+}
+.header__button--bordboek {
+    width: 40px;
+    background: url('./app/images/btn-editor-home.png');
+    background-size: 100%;
+}
+
+
+.editor__subheader,
+.editor__footer {
+    position: relative;
+    z-index: 0;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#aaa81b+0,8f8d16+100 */
+    background: #aaa81b; /* Old browsers */
+    background: -moz-linear-gradient(45deg,  #aaa81b 0%, #8f8d16 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg,  #aaa81b 0%,#8f8d16 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg,  #aaa81b 0%,#8f8d16 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aaa81b', endColorstr='#8f8d16',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+.subheader__title {
+    display: inline-block;
+    font-weight: 400;
+    color: #fff;
+}
+
+.editor__footer {
+    width: 100%;
+    height: 10px;
+    bottom: 0;
+    margin-top: 40px;
+}
+
+.editor__body {
+    /*min-height: 90%;*/
+    margin-bottom: -10px; 
+}
+.editor__body:after {
+  content: "";
+  display: block;
+}
+
+.editor__footer, .editor__body:after {
+  height: 10px; 
+}
+
+/* ---------------------
+    ADD Slide container
+----------------------- */
+
+.add-slide__container {
+
+}

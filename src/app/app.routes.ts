@@ -3,7 +3,7 @@ import { provideRouter, RouterConfig } from '@angular/router';
 import { HomeComponent } from './containers/home/home.component';
 import { EditorComponent } from './containers/editor/editor.component';
 import { ViewerComponent } from './containers/viewer/viewer.component';
-import { AddSlideComponent } from './containers/add-slide.component';
+import { AddSlideComponent } from './containers/addslide/add-slide.component';
 
 import { SlideComponent } from './components/slide/slide.component';
 
@@ -15,7 +15,7 @@ const routes: RouterConfig = [
     },
     { 
         path: 'home', 
-        component: HomeComponent, 
+        component: HomeComponent,
     },
     { 
         path: 'editor', 
