@@ -85,20 +85,24 @@
 
 .wheel__pen-dropdown {
     position: absolute;
-    top: 128px;
+    top: 127px;
     left: -17px;
-    width: 213px;
+    width: 215px;
     height: 196px;
+
+
     background: url('./app/images/wheel-pen-dropdown.png');
     background-size: 100%;
 }
 
 .wheel__answers-dropdown {
     position: absolute;
-    top: 113px;
-    left: 106px;
-    width: 160px;
-    height: 67px;
+    top: 111px;
+    left: 107px;
+    width: 163px;
+    height: 68px;
+
+
     background: url('./app/images/wheel-answers-dropdown.png');
     background-size: 100%;
 }
