@@ -18,6 +18,9 @@ export class AddSlideComponent {
 
     private slides:Array<any> = [];
 
+    private textPreview:boolean = false;
+    private textSlide:boolean = false;
+
     constructor(
         private slidesService: SlidesService,
         private router: Router) { 
@@ -31,5 +34,20 @@ export class AddSlideComponent {
         let slide = { id: 8, html:["<img class='slide__image' src='./app/images/slide8.png' />"], thumb: './app/images/thumb8.png', visible: true, type: 'user' };
         this.slidesService.addSlide(slide);
         this.slides = this.slidesService.getAll();
+    }
+
+    showTextPreview() {
+        if (!this.textSlide) {
+            this.textPreview = true;
+        }
+    }
+    showSlideText() {
+        this.textPreview = false;
+        this.textSlide = true;
+    }
+
+    clear() {
+        this.textPreview = false;
+        this.textSlide = false;
     }
 }
