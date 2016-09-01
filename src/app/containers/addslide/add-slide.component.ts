@@ -1,16 +1,14 @@
 import { Component } from '@angular/core';
-
 import { ROUTER_DIRECTIVES, Router } from '@angular/router';
-
 import { WheelComponent } from '../../components/wheel/wheel.component';
-
 import { SlidesService } from '../../services/slides.service';
+import { Modal} from '../../components/modal/modal.component'
 
 @Component({
     selector: 'add-slide',
     templateUrl: 'app/containers/addslide/add-slide.component.html',
     styleUrls: ['app/containers/addslide/add-slide.component.css'],
-    directives: [ROUTER_DIRECTIVES, WheelComponent],
+    directives: [ROUTER_DIRECTIVES, WheelComponent, Modal],
     providers: [SlidesService]
 })
 
@@ -21,6 +19,7 @@ export class AddSlideComponent {
 
     private textPreview:boolean = false;
     private textSlide:boolean = false;
+    private showModal:boolean = false;
 
     constructor(
         private slidesService: SlidesService,
@@ -96,5 +95,18 @@ export class AddSlideComponent {
         }
 
         this.slidesService.addSlide(slide);
+    }
+
+    openModal(){
+        if(this.showModal === false) {
+            this.showModal = true;
+        }
+    }
+
+    closeModal(modalState){
+        console.log('fase')
+        if(this.showModal === true){
+            this.showModal = false
+        } 
     }
 }

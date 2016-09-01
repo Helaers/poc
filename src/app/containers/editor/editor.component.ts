@@ -9,42 +9,43 @@ import { SlidesService } from '../../services/slides.service';
 
 @Component({
     selector: 'editor',
-    templateUrl: 'app/containers/editor/editor.component.html' ,
-    styleUrls: ['app/containers/editor/editor.component.css'] ,
+    templateUrl: 'app/containers/editor/editor.component.html',
+    styleUrls: ['app/containers/editor/editor.component.css'],
     directives: [ROUTER_DIRECTIVES, WheelComponent, Dragula],
     providers: [SlidesService, DragulaService]
 })
 
 export class EditorComponent {
 
-    private totalSlides:number;
-    private slides:Array<any> = [];
+    private totalSlides: number;
+    private slides: Array<any> = [];
 
     constructor(
         private slidesService: SlidesService,
         private router: Router,
-        private dragulaService: DragulaService) { 
-            dragulaService.drop.subscribe((value) => {
-                this.onDrop();
-            });
-        }
+        private dragulaService: DragulaService) {
+        dragulaService.drop.subscribe((value) => {
+            this.onDrop();
+        });
+    }
 
     ngOnInit() {
         this.slides = this.slidesService.getAll();
         this.totalSlides = this.slides.length;
     }
 
-    toggleVisibility(id:number) {
+    toggleVisibility(id: number) {
         this.slidesService.toggleVisibility(id);
         this.slides = this.slidesService.getAll();
     }
 
     addUserSlide() {
-        let slide = { id: 8, html:["<img class='slide__image' src='./app/images/slide8.png' />"], thumb: './app/images/thumb8.png', visible: true, type: 'user' };
+        let slide = { id: 8, html: ["<img class='slide__image' src='./app/images/slide8.png' />"], thumb: './app/images/thumb8.png', visible: true, type: 'user' };
         this.slidesService.addSlide(slide);
         this.slides = this.slidesService.getAll();
     }
-    delete(slide:any) {
+    
+    delete(slide: any) {
         this.slidesService.removeSlide(slide);
         this.orderSlides();
     }
@@ -57,8 +58,8 @@ export class EditorComponent {
     }
 
     private orderSlides() {
-        for (let i = 0; i<this.slides.length; i++) {
-            this.slides[i].id = i+1;
+        for (let i = 0; i < this.slides.length; i++) {
+            this.slides[i].id = i + 1;
         }
     }
 }

@@ -18,7 +18,7 @@ module.exports = function(defaults) {
       '@angular/**/*.+(js|js.map)',
       //other entries
       'dragula/dist/dragula.js',
-      'ng2-dragula/**/*.js'
+      'ng2-dragula/**/*.js',
     ]
   });
 };
