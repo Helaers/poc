@@ -16,6 +16,8 @@ export class AddSlideComponent {
 
     private slides:Array<any> = [];
     private type:string = '';
+    private modalType:string = '';
+
 
     private textPreview:boolean = false;
     private textSlide:boolean = false;
@@ -100,13 +102,12 @@ export class AddSlideComponent {
     openModal(type){
         if(this.showModal === false) {
             console.log(type)
-            this.type = type;
+            this.modalType = type;
             this.showModal = true;
         }
     }
 
     closeModal(modalState){
-        console.log('fase')
         if(this.showModal === true){
             this.showModal = false
         } 
