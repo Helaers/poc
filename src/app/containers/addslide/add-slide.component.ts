@@ -61,8 +61,8 @@ export class AddSlideComponent {
     private addUserSlide(index, type) {
         let slide = { 
             id: index, 
-            html:["<img class='slide__image' src='./app/images/slide1.png' />"], 
-            thumb: './app/images/thumb1.png', 
+            html:[], 
+            thumb: '', 
             visible: true, 
             type: 'user' 
         };
@@ -110,10 +110,15 @@ export class AddSlideComponent {
     closeModal(modalState){
         if(this.showModal === true){
             this.showModal = false
+            this.type = "";
+            this.modalType = "";
+
+
         } 
     }
 
     confirmModal(type) {
+        console.log('bla', type)
         this.closeModal(true)
         this.type = type;
     }
