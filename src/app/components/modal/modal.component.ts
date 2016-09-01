@@ -11,6 +11,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 export class Modal {
 
+    @Input() modalHeader:string;
     @Input() showModal:boolean;
     @Input() modalType:boolean;
     @Output() closeModal: EventEmitter<boolean> = new EventEmitter<boolean>();

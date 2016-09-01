@@ -17,7 +17,8 @@ export class AddSlideComponent {
     private slides:Array<any> = [];
     private type:string = '';
     private modalType:string = '';
-
+    private modalHeaders:Array<string> = ['Afbeelding importeren', 'Video importeren', 'Audio importeren', 'Hyperlink importeren', 'Bingel oefening importeren']
+    private modalHeader = ''
 
     private textPreview:boolean = false;
     private textSlide:boolean = false;
@@ -61,6 +62,7 @@ export class AddSlideComponent {
     }
 
     private addUserSlide(index, type) {
+
         let slide = { 
             id: index, 
             html:[], 
@@ -68,6 +70,7 @@ export class AddSlideComponent {
             visible: true, 
             type: 'user' 
         };
+
 
         switch(type) {
             case 'text':
@@ -102,6 +105,26 @@ export class AddSlideComponent {
     }
 
     openModal(type){
+
+        //get header by type
+        switch(type) {
+            case 'video':
+                this.modalHeader = this.modalHeaders[0]
+                break;
+            case 'image':
+                this.modalHeader = this.modalHeaders[1]
+            break;
+            case 'audio':
+                this.modalHeader = this.modalHeaders[2]
+            break;
+            case 'link':
+                this.modalHeader = this.modalHeaders[3]
+            break;
+            case 'bingel':
+                this.modalHeader = this.modalHeaders[4]
+            break;
+        }
+
         if(this.showModal === false) {
             console.log(type)
             this.modalType = type;
