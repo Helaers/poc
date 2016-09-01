@@ -125,7 +125,10 @@
 ----------------------- */
 
 .add-slide__container {
-
+    position: relative;
+    width: 800px;
+    margin: 30px auto 120px;
+    text-align: center;
 }
 
 .add-slide__title {
@@ -149,8 +152,34 @@
     margin-right: 10px;
 }
 
+.add-slide {
+    position: relative;
+    display: inline-block;
+    background:url('./app/images/add-slide-bg.png');
+    background-size: 100%;
+
+    width: 91.5%;
+    height: 550px;
+    text-align: center;
+}
+
+.add-slide__content {
+    display: inline-block;
+    width: 92%;
+    min-height: 320px;
+    max-height: 410px;
+    margin-top: 100px;
+    background: #fff;
+    box-shadow: 0 10px 20px -4px rgba(0, 0, 0, 0.23)
+}
+
 .add-slide__button-bar {
+    position: absolute;
+    top: 48px;
+    right: -25px;
     list-style-type: none;
+    margin-top: 0;
+    padding: 0;
 }
 
 .button-bar__item {
