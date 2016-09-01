@@ -17,6 +17,7 @@ import { SlidesService } from '../../services/slides.service';
 export class AddSlideComponent {
 
     private slides:Array<any> = [];
+    private type:string = '';
 
     private textPreview:boolean = false;
     private textSlide:boolean = false;
@@ -27,12 +28,6 @@ export class AddSlideComponent {
         }
 
     ngOnInit() {
-        this.slides = this.slidesService.getAll();
-    }
-
-    addUserSlide() {
-        let slide = { id: 8, html:["<img class='slide__image' src='./app/images/slide8.png' />"], thumb: './app/images/thumb8.png', visible: true, type: 'user' };
-        this.slidesService.addSlide(slide);
         this.slides = this.slidesService.getAll();
     }
 
@@ -49,5 +44,57 @@ export class AddSlideComponent {
     clear() {
         this.textPreview = false;
         this.textSlide = false;
+    }
+
+    sendToOverview() {
+        let id = this.getLastId();
+        this.addUserSlide(id, this.type);
+        this.router.navigate(['/editor']);
+    }
+
+    private getLastId() {
+        let slides = this.slidesService.getAll();
+        return slides.length - 1;
+    }
+
+    private addUserSlide(index, type) {
+        let slide = { 
+            id: index, 
+            html:["<img class='slide__image' src='./app/images/slide1.png' />"], 
+            thumb: './app/images/thumb1.png', 
+            visible: true, 
+            type: 'user' 
+        };
+
+        switch(type) {
+            case 'text':
+                slide.html = ["<img class='slide__image' src='./app/images/slide9.png' />"];
+                slide.thumb = './app/images/thumb9.png';
+                break;
+            case 'video':
+                slide.html = ["<img class='slide__image' src='./app/images/slide8.png' />"];
+                slide.thumb = './app/images/thumb8.png';
+                break;
+            case 'image':
+                slide.html = ["<img class='slide__image' src='./app/images/slide10.png' />"];
+                slide.thumb = './app/images/thumb10.png';
+            break;
+            case 'audio':
+                slide.html = ["<img class='slide__image' src='./app/images/slide11.png' />"];
+                slide.thumb = './app/images/thumb11.png';
+            break;
+            case 'link':
+                slide.html = ["<img class='slide__image' src='./app/images/slide12.png' />"];
+                slide.thumb = './app/images/thumb12.png';
+            break;
+            case 'bingel':
+                slide.html = ["<img class='slide__image' src='./app/images/slide13.png' />"];
+                slide.thumb = './app/images/thumb13.png';
+            break;
+            default:
+                console.log('something went wrong in adding slide');
+        }
+
+        this.slidesService.addSlide(slide);
     }
 }
