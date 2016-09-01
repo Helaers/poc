@@ -53,7 +53,7 @@ export class AddSlideComponent {
 
     private getLastId() {
         let slides = this.slidesService.getAll();
-        return slides.length - 1;
+        return slides.length;
     }
 
     private addUserSlide(index, type) {
