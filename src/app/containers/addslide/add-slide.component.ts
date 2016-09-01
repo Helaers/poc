@@ -97,7 +97,7 @@ export class AddSlideComponent {
         this.slidesService.addSlide(slide);
     }
 
-    openModal(){
+    openModal(type){
         if(this.showModal === false) {
             this.showModal = true;
         }

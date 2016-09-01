@@ -12,6 +12,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class Modal {
 
     @Input() showModal:boolean;
+    @Input() type:boolean;
     @Output() closeModal: EventEmitter<boolean> = new EventEmitter<boolean>();
     @Output() confirmModal: EventEmitter<boolean> = new EventEmitter<boolean>();
 
@@ -31,7 +32,5 @@ export class Modal {
     getModalState() {
         return this.showModal;
     }
-
-
 
 }

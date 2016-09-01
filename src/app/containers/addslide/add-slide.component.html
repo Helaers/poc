@@ -11,52 +11,45 @@
     <div class="editor__subheader">
         <h2 class="subheader__title">Scherm toevoegen</h2>
     </div>
-
     <section class="editor__body">
-
         <div class="add-slide__container">
-
             <h2 class="add-slide__title"><span class="add-slide__number">8</span>Klik hier om een titel toe te voegen</h2>
-
             <div class="add-slide">
                 <div class="add-slide__content">
-                    
+                    <img class="content__image" src="./app/images/input-text.png" *ngIf="textPreview" (click)="showSlideText()" />
+                    <img class="content__image" src="./app/images/slide9.png" *ngIf="textSlide" />
                 </div>
             </div>
-
             <ul class="add-slide__button-bar">
                 <li class="button-bar__item">
-                    <a class="button_bar__button" [class.active]="showText" (click)="showText = !showText"><img class="button_bar__icon" src="./app/images/icn-text.png"></a>
+                    <a class="button_bar__button" [class.active]="textPreview || textSlide" (click)="showTextPreview()"><img class="button_bar__icon" src="./app/images/icn-text.png"></a>
                 </li>
-                <li (click)="openModal()" class="button-bar__item">
+                <li (click)="openModal(image)" class="button-bar__item">
                     <a class="button_bar__button"><img class="button_bar__icon image" src="./app/images/icn-image.png"></a>
                 </li>
-                <li (click)="openModal()" class="button-bar__item">
+                <li (click)="openModal(video)" class="button-bar__item">
                     <a class="button_bar__button"><img class="button_bar__icon video" src="./app/images/icn-video.png"></a>
                 </li>
-                <li (click)="openModal()" class="button-bar__item">
+                <li (click)="openModal(audio)" class="button-bar__item">
                     <a class="button_bar__button"><img class="button_bar__icon audio" src="./app/images/icn-audio.png"></a>
                 </li>
-                <li (click)="openModal()" class="button-bar__item">
+                <li (click)="openModal(link)" class="button-bar__item">
                     <a class="button_bar__button"><img class="button_bar__icon link" src="./app/images/icn-link.png"></a>
                 </li>
-                <li (click)="openModal()" class="button-bar__item">
+                <li (click)="openModal(bingel)" class="button-bar__item">
                     <a class="button_bar__button"><img class="button_bar__icon bingel" src="./app/images/icn-bingel.png"></a>
                 </li>
-                <li (click)="openModal()" class="button-bar__item">
-                    <a class="button_bar__button red"><img class="button_bar__icon" src="./app/images/icn-trash.png"></a>
+                <li class="button-bar__item">
+                    <a class="button_bar__button red" (click)="clear()"><img class="button_bar__icon" src="./app/images/icn-trash.png"></a>
                 </li>
             </ul>
-
         </div>
         
     </section>
-
     <footer class="editor__footer">
         <button class="footer-button--ghost">Annuleren</button>
-        <button class="footer-button">Opslaan</button>
+        <button class="footer-button" (click)="sendToOverview()">Opslaan</button>
     </footer>
 </section>
-
 <wheel></wheel>
-<modal (closeModal)="closeModal()" [showModal]="showModal"></modal>
+<modal (closeModal)="closeModal()" [showModal]="showModal" [type]="type"></modal>
