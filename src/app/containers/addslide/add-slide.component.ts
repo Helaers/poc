@@ -99,6 +99,8 @@ export class AddSlideComponent {
 
     openModal(type){
         if(this.showModal === false) {
+            console.log(type)
+            this.type = type;
             this.showModal = true;
         }
     }
@@ -108,5 +110,10 @@ export class AddSlideComponent {
         if(this.showModal === true){
             this.showModal = false
         } 
+    }
+
+    confirmModal(type) {
+        this.closeModal(true)
+        this.type = type;
     }
 }

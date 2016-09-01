@@ -26,7 +26,7 @@ export class Modal {
     }
 
     add() {
-        this.confirmModal.emit(this.showModal);
+        this.confirmModal.emit(this.type);
     }
 
     getModalState() {

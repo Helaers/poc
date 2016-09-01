@@ -24,19 +24,19 @@
                 <li class="button-bar__item">
                     <a class="button_bar__button" [class.active]="textPreview || textSlide" (click)="showTextPreview()"><img class="button_bar__icon" src="./app/images/icn-text.png"></a>
                 </li>
-                <li (click)="openModal(image)" class="button-bar__item">
+                <li (click)="openModal('image')" class="button-bar__item">
                     <a class="button_bar__button"><img class="button_bar__icon image" src="./app/images/icn-image.png"></a>
                 </li>
-                <li (click)="openModal(video)" class="button-bar__item">
+                <li (click)="openModal('video')" class="button-bar__item">
                     <a class="button_bar__button"><img class="button_bar__icon video" src="./app/images/icn-video.png"></a>
                 </li>
-                <li (click)="openModal(audio)" class="button-bar__item">
+                <li (click)="openModal('audio')" class="button-bar__item">
                     <a class="button_bar__button"><img class="button_bar__icon audio" src="./app/images/icn-audio.png"></a>
                 </li>
-                <li (click)="openModal(link)" class="button-bar__item">
+                <li (click)="openModal('link')" class="button-bar__item">
                     <a class="button_bar__button"><img class="button_bar__icon link" src="./app/images/icn-link.png"></a>
                 </li>
-                <li (click)="openModal(bingel)" class="button-bar__item">
+                <li (click)="openModal('bingel')" class="button-bar__item">
                     <a class="button_bar__button"><img class="button_bar__icon bingel" src="./app/images/icn-bingel.png"></a>
                 </li>
                 <li class="button-bar__item">
@@ -52,4 +52,4 @@
     </footer>
 </section>
 <wheel></wheel>
-<modal (closeModal)="closeModal()" [showModal]="showModal" [type]="type"></modal>
+<modal (confirmModal)="confirmModal(type)" (closeModal)="closeModal()" [showModal]="showModal" [type]="type"></modal>
