@@ -18,6 +18,12 @@
                 <div class="add-slide__content">
                     <img class="content__image" src="./app/images/input-text.png" *ngIf="textPreview" (click)="showSlideText()" />
                     <img class="content__image" src="./app/images/slide9.png" *ngIf="textSlide" />
+
+                    <img class="content__image" src="./app/images/slide8.png" *ngIf="type === 'video'" />
+                    <img class="content__image" src="./app/images/slide10.png" *ngIf="type === 'image'" />
+                    <img class="content__image" src="./app/images/slide11.png" *ngIf="type === 'audio'" />
+                    <img class="content__image" src="./app/images/slide12.png" *ngIf="type === 'link'" />
+                    <img class="content__image" src="./app/images/slide13.png" *ngIf="type === 'bingel'" />
                 </div>
             </div>
             <ul class="add-slide__button-bar">
@@ -47,7 +53,7 @@
         
     </section>
     <footer class="editor__footer">
-        <button class="footer-button--ghost">Annuleren</button>
+        <button class="footer-button--ghost" [routerLink]="['/editor']">Annuleren</button>
         <button class="footer-button" (click)="sendToOverview()">Opslaan</button>
     </footer>
 </section>

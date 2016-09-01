@@ -33,6 +33,7 @@ export class AddSlideComponent {
     }
 
     showTextPreview() {
+        this.type = '';
         if (!this.textSlide) {
             this.textPreview = true;
         }
@@ -45,6 +46,7 @@ export class AddSlideComponent {
     clear() {
         this.textPreview = false;
         this.textSlide = false;
+        this.type = '';
     }
 
     sendToOverview() {
