@@ -8,7 +8,7 @@
 }
 
 .modal-container {
-  width: 640px;
+  width: 600px;
   background-color: white;
   margin: auto;
   position: relative;
@@ -35,7 +35,7 @@
 }
 
 .modal-header {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 .modal-header:after {
     content: '';
@@ -97,7 +97,7 @@
 .modal_footer {
     display: inline-block;
     position: relative;
-    height: 59px;
+    height: 60px;
     width: 100%;
 }
 .modal-content_buttoncontainer {
@@ -130,10 +130,17 @@ label {
 input[type=text], textarea {
     border-radius: 3px;
     padding: 10px 7px;
-    min-width: 200px;
+    min-width: 290px;
     border: 1px solid #c7c7c7;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
+}
+
+input.image-url {
+    width: 381px;
+}
+input.video-url {
+    width: 440px;
 }
 
 textarea {
@@ -143,7 +150,7 @@ textarea {
 .checkbox-container {
     position: relative;
     margin-top: 3px;
-    margin-left: 210px;
+    margin-left: 300px;
 }
 .checkbox-input {
     font-family: 'Roboto', sans-serif;

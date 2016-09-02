@@ -29,13 +29,15 @@
 
                     <div class="form-group">
                         <label for="url" class="form-label url">URL:</label>
-                        <input type="text" name="url" value="">
+                        <input type="text" name="url" value="" class="image-url">
                     </div>
                 </div>
 
                 <div *ngIf="modalType === 'video'">
-                    <label for="videoUrl">URL:</label>
-                    <input type="text" name="videoUrl" value="">
+                    <div class="form-group">
+                        <label for="videoUrl" class="form-label">URL:</label>
+                        <input type="text" name="videoUrl" value="" class="video-url">
+                    </div>
                 </div>
 
                 <div *ngIf="modalType === 'audio'">

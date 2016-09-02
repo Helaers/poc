@@ -16,6 +16,7 @@ export class AddSlideComponent {
 
     private slides:Array<any> = [];
     private type:string = '';
+    private id:number;
     private modalType:string = '';
     private modalHeaders:Array<string> = ['Afbeelding importeren', 'Video importeren', 'Audio importeren', 'Hyperlink importeren', 'Bingel oefening importeren']
     private modalHeader = ''
@@ -31,10 +32,11 @@ export class AddSlideComponent {
 
     ngOnInit() {
         this.slides = this.slidesService.getAll();
+        this.id = this.slides.length + 1;
     }
 
     showTextPreview() {
-        this.type = '';
+        this.type = 'text';
         if (!this.textSlide) {
             this.textPreview = true;
         }
@@ -51,14 +53,8 @@ export class AddSlideComponent {
     }
 
     sendToOverview() {
-        let id = this.getLastId();
-        this.addUserSlide(id, this.type);
+        this.addUserSlide(this.id, this.type);
         this.router.navigate(['/editor']);
-    }
-
-    private getLastId() {
-        let slides = this.slidesService.getAll();
-        return slides.length + 1;
     }
 
     private addUserSlide(index, type) {
@@ -135,15 +131,12 @@ export class AddSlideComponent {
     closeModal(modalState){
         if(this.showModal === true){
             this.showModal = false
-            this.type = "";
-            this.modalType = "";
-
-
+            this.type = ''
+            this.modalType = '';
         } 
     }
 
     confirmModal(type) {
-        console.log('bla', type)
         this.closeModal(true)
         this.type = type;
     }
