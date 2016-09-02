@@ -104,10 +104,10 @@ export class AddSlideComponent {
 
         //get header by type
         switch(type) {
-            case 'video':
+            case 'image':
                 this.modalHeader = this.modalHeaders[0]
                 break;
-            case 'image':
+            case 'video':
                 this.modalHeader = this.modalHeaders[1]
             break;
             case 'audio':

@@ -114,6 +114,19 @@
     margin-bottom: 20px;
 }
 
+.form-group.indent {
+    margin-left: 183px;
+    margin-top: -10px;
+}
+.form-group.small input {
+    padding: 5px 5px;
+    font-size: 12px;
+}
+.form-group.small label {
+    font-size: 12px;
+    margin-right: 5px;
+}
+
 label {
     color: #646464;
 }
@@ -126,21 +139,37 @@ label {
 .form-label.url {
     margin-right: 82px;
 }
+.form-label.audio-bestand {
+    margin-right: 67px;
+}
 
 input[type=text], textarea {
     border-radius: 3px;
     padding: 10px 7px;
-    min-width: 290px;
+    min-width: 200px;
     border: 1px solid #c7c7c7;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
 }
 
+input.image-file {
+    width: 290px;
+}
 input.image-url {
     width: 381px;
 }
 input.video-url {
     width: 440px;
+}
+input.audio-background,
+input.audio-file {
+    width: 260px;
+}
+input.link-url {
+    width: 365px;
+}
+input.bingel-url {
+    width: 445px;
 }
 
 textarea {
@@ -164,4 +193,18 @@ textarea {
     font-size: 14px;
     padding: 11px 16px;
     border-radius: 3px;
+}
+
+.form-button.icon {
+    line-height: 1;
+    padding: 5px 12px;
+    border-radius: 3px;
+    vertical-align: top;
+    font-size: 27px;
+}
+
+.modal-copy {
+    color: #929292;
+    line-height: 1.5;
+    margin-bottom: 30px;
 }

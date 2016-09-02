@@ -4,7 +4,11 @@
 
             <div class="modal-header">
                 <span class="modal-header__icon">
-                    <img src="./app/images/icn-modal-image.png" class="image" />
+                    <img src="./app/images/icn-modal-image.png" class="image" *ngIf="modalType==='image'" />
+                    <img src="./app/images/icn-modal-video.png" class="image" *ngIf="modalType==='video'" />
+                    <img src="./app/images/icn-modal-audio.png" class="image" *ngIf="modalType==='audio'" />
+                    <img src="./app/images/icn-modal-link.png" class="image" *ngIf="modalType==='link'" />
+                    <img src="./app/images/icn-modal-bingel.png" class="image" *ngIf="modalType==='bingel'" />
                 </span>
                 <h2 class="modal-header__title">{{modalHeader}}</h2>
             </div>
@@ -15,7 +19,7 @@
                 <div *ngIf="modalType === 'image'">
                     <div class="form-group">
                         <label for="imageUrl" class="form-label bestand">Kies bestand:</label>
-                        <input type="text" name="imageUrl" value="">
+                        <input type="text" name="imageUrl" value="" class="image-file">
                         <button type="button" class="form-button">Bladeren</button>
                         <div class="checkbox-container">
                             <input type="checkbox" name="origineleAfmetingen"><label class="checkbox-input">Originele afmeting</label>
@@ -41,32 +45,41 @@
                 </div>
 
                 <div *ngIf="modalType === 'audio'">
-                    <label for="audio">Kies audio:</label>
-                    <input type="text" name="bladerenAudio" value="">
-                    <button type="button">Bladeren</button>
+                    <div class="form-group">
+                        <label for="audio" class="form-label audio-bestand">Kies audio:</label>
+                        <input type="text" name="bladerenAudio" value="" class="audio-file">
+                        <button type="button" class="form-button">Bladeren</button>
+                    </div>
 
-                    <label for="audio">Kies achtergrond:</label>
-                    <input type="text" name="bladerenAchtergrond" value="">
-                    <button type="button">Bladeren</button>
+                    <div class="form-group">
+                        <label for="audio" class="form-label">Kies achtergrond:</label>
+                        <input type="text" name="bladerenAchtergrond" value="" class="audio-background">
+                        <button type="button" class="form-button">Bladeren</button>
+                    </div>
                 </div>
 
                 <div *ngIf="modalType === 'link'">
-                    <span>Hier kan je een link toevoegen naar bijvoorbeeld een PowerPoint presentatie of een website (max. 4).</span>
+                    <p class="modal-copy">Hier kan je een link toevoegen naar bijvoorbeeld een PowerPoint presentatie of een website (max. 4).</p>
 
-                    <label for="hyperlink">Hyperlink:</label>
-                    <input type="text" name="hyperlink" value="">
-                    <button type="button"> + </button>
-
-                    <label for="buttonTekst">Button tekst:</label>
-                    <input type="text" name="buttonTekst" value="">
+                    <div class="form-group">
+                        <label for="hyperlink" class="form-label">Hyperlink:</label>
+                        <input type="text" name="hyperlink" value="" class="link-url">
+                        <button type="button" class="form-button icon"> + </button>
+                    </div>
+                    <div class="form-group indent small">
+                        <label for="buttonTekst" class="form-label">Button tekst:</label>
+                        <input type="text" name="buttonTekst" value="">
+                    </div>
                 </div>
 
 
                 <div *ngIf="modalType === 'bingel'">
-                    <span>Hier kan je een oefening toevoegen, om samen met de leerlingen, uit te voeren aan het bord</span>
-
-                    <label for="Url">URL:</label>
-                    <input type="text" name="Url" value="">
+                    <p class="modal-copy">Hier kan je een oefening toevoegen, om samen met de leerlingen, uit te voeren aan het bord</p>
+                    
+                    <div class="form-group">
+                        <label for="Url" class="form-label">URL:</label>
+                        <input type="text" name="Url" value="" class="bingel-url">
+                    </div>
                 </div>
 
             </form>
